@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+  - 0.10
+
+branches:
+  only:
+    - master
+
+before_install:
+  - sudo sed -i -e 's/^Defaults\tsecure_path.*$//' /etc/sudoers
+  - npm install -g grunt-cli
+
+script:
+  - sudo -E grunt
+
+notifications:
+  email:
+    - mrvisser@gmail.com
